@@ -8,15 +8,23 @@ pipeline {
             }
         }
         stage('Test') {
-            stages{
-                stage("test1"){
-                    steps{
-                        echo "test1"
+            stages {
+                stage('Main Tests') {
+                    steps {
+                        echo 'Running main tests...'
+                        // Add main test steps here
                     }
                 }
-                stage("test2"){
-                    steps{
-                        echo "test2"
+                stage('Additional Test 1') {
+                    steps {
+                        echo 'Running additional test 1...'
+                        // Add additional test 1 steps here
+                    }
+                }
+                stage('Additional Test 2') {
+                    steps {
+                        echo 'Running additional test 2...'
+                        // Add additional test 2 steps here
                     }
                 }
             }
