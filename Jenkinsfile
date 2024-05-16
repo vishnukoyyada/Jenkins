@@ -12,11 +12,13 @@ pipeline {
                 echo 'Running tests...'
                 // Add test steps here
             }
-            steps{
-                echo "Test2"
+            steps {
+                echo 'Running additional test 1...'
+                // Add additional test 1 steps here
             }
-            steps{
-                echo "test3"
+            steps {
+                echo 'Running additional test 2...'
+                // Add additional test 2 steps here
             }
         }
         stage('Deploy') {
