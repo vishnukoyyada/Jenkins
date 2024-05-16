@@ -8,24 +8,22 @@ pipeline {
             }
         }
         stage('Test') {
-            stages {
-                stage('Main Tests') {
-                    steps {
-                        echo 'Running main tests...'
-                        // Add main test steps here
-                    }
-                }
-                stage('Additional Test 1') {
-                    steps {
-                        echo 'Running additional test 1...'
-                        // Add additional test 1 steps here
-                    }
-                }
-                stage('Additional Test 2') {
-                    steps {
-                        echo 'Running additional test 2...'
-                        // Add additional test 2 steps here
-                    }
+            steps {
+                script {
+                    parallel (
+                        "Main Tests": {
+                            echo 'Running main tests...'
+                            // Add main test steps here
+                        },
+                        "Additional Test 1": {
+                            echo 'Running additional test 1...'
+                            // Add additional test 1 steps here
+                        },
+                        "Additional Test 2": {
+                            echo 'Running additional test 2...'
+                            // Add additional test 2 steps here
+                        }
+                    )
                 }
             }
         }
