@@ -7,7 +7,9 @@ pipeline {
                 }
             }
             stage ("test"){
-                stages{
+                steps{
+                    echo "main test"
+                }
                     stage("test1"){
                         steps {
                             echo "test1"
@@ -18,8 +20,6 @@ pipeline {
                             echo "test2"
                         }
                     }
-                }
-
             }
             stage ("deploy"){
                 steps {
