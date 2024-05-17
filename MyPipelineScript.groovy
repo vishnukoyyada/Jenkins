@@ -13,13 +13,12 @@ pipeline {
                         "Test": {
                             echo "main test"
                         },
-                   "test1" :{
+                        "test1" :{
                           echo "test1"
-            },
-          "test2": {
-        
-                    echo "test2"
-            }
+                          },
+                        "test2": {
+                            echo "test2"
+                            }
                     )
                 }
 
