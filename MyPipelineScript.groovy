@@ -7,9 +7,6 @@ pipeline {
             }
         }
         stage("test") {
-            steps {
-                echo "main test"
-            }
             stages{
 
             stage("test1") {
