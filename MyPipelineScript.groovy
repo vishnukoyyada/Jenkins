@@ -7,9 +7,19 @@ pipeline {
                 }
             }
             stage ("test"){
-                steps {
-                    echo "test"
+                stages{
+                    stage("test1"){
+                        steps {
+                            echo "test1"
+                        }
+                    }
+                    stage("test2"){
+                        steps{
+                            echo "test2"
+                        }
+                    }
                 }
+
             }
             stage ("deploy"){
                 steps {
