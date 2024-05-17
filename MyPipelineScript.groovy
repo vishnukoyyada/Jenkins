@@ -7,18 +7,22 @@ pipeline {
             }
         }
         stage("test") {
-            stages{
-
-            stage("test1") {
-                steps {
-                    echo "test1"
-                }
+            steps{
+                script{
+                    parallel(
+                        "Test": {
+                            echo "main test"
+                        }
+                   "test1" :{
+                          echo "test1"
             }
-            stage("test2") {
-                steps {
+          "test2": {
+        
                     echo "test2"
-                }
             }
+                    )
+                }
+
             }
         }
         stage("deploy") {
